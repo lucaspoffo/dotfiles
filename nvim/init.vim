@@ -7,10 +7,10 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neovim/nvim-lsp'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Git stuff (2)
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
-
-
-
 
 colorscheme challenger_deep
 
@@ -23,6 +23,21 @@ nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>es :source ~/.config/nvim/init.vim<cr>
 
+nnoremap ,b :Buffers<CR>
+nnoremap ,f :Files<CR>
+nnoremap ,s :BLines<CR>
+nnoremap ,l :Lines<CR>
+nnoremap ,m :Marks<CR>
+nnoremap ,a :Ag<CR>
+nnoremap ,r :Rg<CR>
+nnoremap ,qo :copen<CR>
+nnoremap ,qn :cnext<CR>
+nnoremap ,qp :cprev<CR>
+nnoremap ,qq :cclose<CR>
+nnoremap ,lo :lopen<CR>
+nnoremap ,ln :lnext<CR>
+nnoremap ,lp :lprev<CR>
+nnoremap ,lq :lclose<CR>
 " nnoremap <c-f> :Ag<space>
 
 " Some servers have issues with backup files, see #649.
@@ -43,7 +58,7 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 if has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
+set signcolumn=number
 else
   set signcolumn=yes
 endif

@@ -229,3 +229,6 @@ bindsym $mod+Ctrl+Return exec i3-sensible-terminal -e htop
 bindsym Print exec gnome-screenshot -i 
 #crop-area screenshot by pressing Mod + printscreen
 bindsym $mod+Print exec gnome-screenshot -a
+
+#swap caps with esc
+xmodmap ~/.config/.swapcaps
