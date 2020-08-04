@@ -10,10 +10,24 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Git stuff (2)
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+" Multi Line Selector
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" The status bar
+Plug 'itchyny/lightline.vim'
+let g:lightline = { 
+      \  'colorscheme': 'challenger_deep',
+      \  'active': {
+      \    'left': [['mode', 'paste'], ['readonly', 'relativepath', 'modified']],
+      \  },
+      \  'inactive': {
+      \    'left': [['relativepath']],
+      \  }
+      \}
+     
 call plug#end()
-
+     
 colorscheme challenger_deep
-
+   
 set hidden
 set number
 set mouse=a
