@@ -3,10 +3,20 @@ call plug#begin('~/.vim/plugged')
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'
+" File explorer
+Plug 'preservim/nerdtree'
+" FZF fuzzy search
+let $FZF_DEFAULT_COMMAND = 'rg --files'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'neovim/nvim-lsp'
+
+" GUI enhancements
+Plug 'machakann/vim-highlightedyank'
+
+" Plug 'neovim/nvim-lsp'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
+
 " Git stuff (2)
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -17,25 +27,39 @@ Plug 'itchyny/lightline.vim'
 let g:lightline = { 
       \  'colorscheme': 'challenger_deep',
       \  'active': {
-      \    'left': [['mode', 'paste'], ['readonly', 'relativepath', 'modified']],
+      \    'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'relativepath', 'modified']],
       \  },
       \  'inactive': {
-      \    'left': [['relativepath']],
-      \  }
+      \    'left': [['relativepath']]
+      \  },
+      \  'component_function': {
+      \    'gitbranch': 'FugitiveHead'
+      \  },
       \}
      
 call plug#end()
      
 colorscheme challenger_deep
-   
+
+set termguicolors
 set hidden
 set number
 set mouse=a
 set inccommand=split
 
+" Move lines with alt 'j' and 'k'
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
 nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>es :source ~/.config/nvim/init.vim<cr>
+
+nnoremap <C-a> :NERDTreeToggle<CR>
 
 nnoremap ,b :Buffers<CR>
 nnoremap ,f :Files<CR>
@@ -52,7 +76,10 @@ nnoremap ,lo :lopen<CR>
 nnoremap ,ln :lnext<CR>
 nnoremap ,lp :lprev<CR>
 nnoremap ,lq :lclose<CR>
-" nnoremap <c-f> :Ag<space>
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " Some servers have issues with backup files, see #649.
 set nobackup

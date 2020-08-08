@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/lucas/.config/nvim'
 let g:netrw_dirhist_7='/home/lucas/Rust/playground/src'
 let g:netrw_dirhist_6='/home/lucas/Rust/netcarrier/src'
 let g:netrw_dirhist_5='/home/lucas/Rust/netcarrier'
