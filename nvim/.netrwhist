@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/lucas/RD/rdstation/app/helpers/i18n'
+let g:netrw_dirhist_0='/home/lucas/RD/rdstation/app/views/accounts/config'
+let g:netrw_dirhist_9='/home/lucas/RD/rdstation/app/helpers/i18n'
 let g:netrw_dirhist_8='/home/lucas/.config/nvim'
 let g:netrw_dirhist_7='/home/lucas/Rust/playground/src'
 let g:netrw_dirhist_6='/home/lucas/Rust/netcarrier/src'
@@ -7,4 +10,3 @@ let g:netrw_dirhist_5='/home/lucas/Rust/netcarrier'
 let g:netrw_dirhist_4='/home/lucas/Rust/netcarrier/src'
 let g:netrw_dirhist_3='/home/lucas/Rust/netcarrier'
 let g:netrw_dirhist_2='/home/lucas/Rust/netcarrier/src'
-let g:netrw_dirhist_1='/home/lucas/Rust/netcarrier'

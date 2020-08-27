@@ -5,6 +5,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'
 " File explorer
 Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 " FZF fuzzy search
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -63,6 +65,7 @@ nnoremap <C-a> :NERDTreeToggle<CR>
 
 nnoremap ,b :Buffers<CR>
 nnoremap ,f :Files<CR>
+nnoremap ,g :GFiles?<CR>
 nnoremap ,s :BLines<CR>
 nnoremap ,l :Lines<CR>
 nnoremap ,m :Marks<CR>
