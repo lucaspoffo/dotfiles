@@ -49,6 +49,11 @@ set number
 set mouse=a
 set inccommand=split
 
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+
 " Move lines with alt 'j' and 'k'
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -61,7 +66,7 @@ nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>es :source ~/.config/nvim/init.vim<cr>
 
-nnoremap <C-a> :NERDTreeToggle<CR>
+nnoremap <A-a> :NERDTreeToggle<CR>
 
 nnoremap ,b :Buffers<CR>
 nnoremap ,f :Files<CR>
@@ -80,9 +85,6 @@ nnoremap ,ln :lnext<CR>
 nnoremap ,lp :lprev<CR>
 nnoremap ,lq :lclose<CR>
 
-set tabstop=4
-set shiftwidth=4
-set expandtab
 
 " Some servers have issues with backup files, see #649.
 set nobackup
@@ -106,6 +108,8 @@ set signcolumn=number
 else
   set signcolumn=yes
 endif
+
+nnoremap <A-f> :call CocAction('format')<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by

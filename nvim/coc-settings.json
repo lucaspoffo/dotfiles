@@ -1,9 +1,11 @@
 {
-	"languageserver": {
-    		"rust": {
-      			"command": "rust-analyzer",
-      			"filetypes": ["rust"],
-      			"rootPatterns": ["Cargo.toml"]
-    		}
-	}
+  "eslint.autoFixOnSave": true,
+  "languageserver": {
+    "ocaml": {
+      "command": "ocaml-language-server",
+      "args": ["--stdio"],
+      "filetypes": ["ocaml", "reason"]
+    }
+  },
+  "rust-analyzer.diagnostics.disabled": ["unresolved-proc-macro", "inactive-code"]
 }
